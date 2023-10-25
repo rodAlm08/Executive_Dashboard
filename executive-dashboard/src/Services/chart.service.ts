@@ -82,4 +82,45 @@ export class ChartService {
       },
     });
   }
+
+  scatter(
+    graphTitle: string,
+    labels: any,
+    data: any[],
+    context: string
+) {
+    var chart = new Chart(context, {
+        type: 'scatter',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: graphTitle,
+                data: data,
+                backgroundColor: 'rgba(255, 99, 132, 1)', // Color of the scatter points
+                borderColor: 'rgba(255, 99, 132, 1)', // Color of the scatter point borders
+                borderWidth: 1, // Border width of the scatter points
+                pointRadius: 5, // Radius of the scatter points
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: graphTitle
+                }
+            },
+            scales: {
+                x: {
+                    type: 'linear', // 'linear' for numeric values, 'time' for time series data
+                    position: 'bottom'
+                },
+                y: {
+                    type: 'linear',
+                    position: 'left'
+                }
+            }
+        }
+    });
+}
+
 }

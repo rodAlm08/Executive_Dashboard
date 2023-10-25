@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
       'doughnut'
     );
 
+
     this.chart.double(
       this.chartName,
       'key 1',
@@ -45,5 +46,14 @@ export class AppComponent implements OnInit {
       'bar'
     );
 
+    this.chart.scatter(
+      this.chartName, // graphTitle: string
+      this.labelList, // array of labels for the X-axis
+      this.data.map((value, index) => ({ x: value, y: this.sdata[index] })), // combining data and sdata for scatter points
+      'scatter-chart' // context: string
+  );
+  
+  
+  
   }
 }

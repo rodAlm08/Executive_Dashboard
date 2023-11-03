@@ -14,44 +14,30 @@
         <section class="hero-section">
             <div class="container">
                 <h1>Executive Dashboard</h1>
-                <p><h3>AI working in you favor!</h3>
+                <h3>AI working in your favor!</h3>
                 <a href="#" class="cta-button">Get Started</a>
             </div>
         </section>
-
+    
         <section class="features-section">
-            <div class="chart-container">
-                <div class="feature">
-                    <h2>Fine Motor</h2>
-                    <p>Effortlessly track your activities and monitor your progress over time.</p>
-                    <canvas id="line-chart"></canvas>
-                </div>
-                <div class="feature">
-                    <h2>Visual Skills</h2>
-                    <p>Effortlessly track your activities and monitor your progress over time.</p>
-                    <canvas id="bar-chart"></canvas>
-                </div>
-                <div class="feature">
-                    <h2>Biometrics</h2>
-                    <p>Effortlessly track your activities and monitor your progress over time.</p>
-                    <canvas id="doughnut-chart"></canvas>
-                </div>
-                <div class="feature">
-                    <h2>Biometrics</h2>
-                    <p>Effortlessly track your activities and monitor your progress over time.</p>
-                    <canvas id="scatter-chart"></canvas>
-                </div>
+            <div class="centered-chart-container">
+                <select id="chartType" [(ngModel)]="selectedChartType" (change)="onChartTypeChange()">
+                    <option value="line">Line Chart</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="scatter">Scatter Chart</option>
+                    <option value="pie">Pie Chart</option>
+                </select>
+                <canvas id="chartCanvas"></canvas>
             </div>
         </section>
-        
     </main>
 
     <footer class="footer">
         <img src="../assets/ATU.png" alt="Footer Image">
         <div class="container">
-          
+
             <div>
-                
+
                 <p>&copy; 2023 Rodrigo & Otito Development. All rights reserved.</p>
                 <ul class="social-links">
                     <li><a href="#">LinkedIn</a></li>
@@ -60,7 +46,7 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

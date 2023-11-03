@@ -6,19 +6,19 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .hero-section {
-    background-image: url('../assets/banner.jpeg'); /* Specify the path to your image file */
+    background-image: url('../assets/banner.jpeg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .hero-section h1 {
@@ -39,35 +39,6 @@ body {
 
 .cta-button:hover {
     background-color: #45a049;
-}
-
-.features-section {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: px;
-}
-
-.feature {
-    flex-basis: calc(33.33% - 40px);
-    margin: 20px;
-    text-align: center;
-    padding: 40px;
-    background-color: #fff;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .feature {
-        flex-basis: calc(50% - 40px);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .feature {
-        flex-basis: calc(100% - 40px);
-    }
 }
 
 .footer {
@@ -108,30 +79,67 @@ body {
     text-decoration: none;
 }
 
-
-/* chart one beside the other */
-.chart-container {
+/* Center the chart canvas on the page */
+.centered-chart-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-.canvas-container {
-    flex: 1 1 calc(50% - 40px);
-    margin: 20px;
-    text-align: center;
-    padding: 40px;
+/* Dropdown styles */
+#chartType {
+    margin-bottom: 20px;
+}
+
+/* Chart styles (similar to your canvas-container styles) */
+.centered-chart-container canvas {
+    max-width: 1300px;
+    width: 100%;
+    height: 100%;
     background-color: #fff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    max-width: 400px; /* Optional: Set a maximum width if you want to limit the chart size */
-    width: 100%; /* Charts will take up 100% of the available width */
+}
+/* Style the dropdown */
+#chartType {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .canvas-container {
-        flex: 1 1 calc(100% - 40px);
-    }
+/* Style the dropdown arrow */
+#chartType::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
 }
 
+/* Change styles on hover */
+#chartType:hover {
+    background-color: #f0f0f0;
+}
+
+/* Change styles on focus */
+#chartType:focus {
+    outline: none;
+    border-color: #4CAF50; /* Example color when the dropdown is focused */
+}
+
+/* Style the options */
+#chartType option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}

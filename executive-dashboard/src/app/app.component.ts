@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent implements OnInit {
   selectedChartType: string = '';
   canvasId: string = 'chartCanvas';

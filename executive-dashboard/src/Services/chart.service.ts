@@ -17,7 +17,9 @@ interface CanvasWithChart extends HTMLCanvasElement {
 export class ChartService {
   constructor(private http: HttpClient) {}
 
+  // This function fetches data from a JSON file
   fetchData(): Observable<any> {
+    // The HTTP GET request is made to the 'assets/data.json' path
     return this.http.get('assets/data.json');
   }
 

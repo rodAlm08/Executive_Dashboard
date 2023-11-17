@@ -9,7 +9,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { OffcanvasContentComponent } from './offcanvas-content/offcanvas-content.component';
+
 
 @NgModule({
   declarations: [
@@ -18,8 +18,7 @@ import { OffcanvasContentComponent } from './offcanvas-content/offcanvas-content
     ChartsComponent,
     NavigationComponent,
     HeaderComponent,
-    FooterComponent,
-    OffcanvasContentComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

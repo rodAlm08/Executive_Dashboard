@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartService } from 'src/Services/chart.service';
 import { ChangeDetectorRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';;
 
 @Component({
   selector: 'app-charts',

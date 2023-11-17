@@ -9,6 +9,12 @@ import { ChartsComponent } from './charts/charts.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table'; // Add this
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -24,7 +30,11 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule, // Add FormsModule here
-    HttpClientModule // Add HttpClientModule here
+    HttpClientModule, BrowserAnimationsModule, // Add HttpClientModule here
+    MatFormFieldModule,
+    MatTableModule, // Add this
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,46 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">
-    <img src="../../assets/logo.png" alt="Your Logo" height="70">
-  </a>
-  <button class="navbar-toggler" type="button" mat-button mat-icon-button (click)="toggleMenu()">
-    <mat-icon style="font-size: 30px;">menu</mat-icon>
+<!-- navigation.component.html -->
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="onToggleSidebar()">
+    <mat-icon>menu</mat-icon>
   </button>
-
-  <div class="collapse navbar-collapse" [class.show]="menuOpen">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active" style="font-size: 20px;">
-          <mat-icon style="font-size: 30px;">home</mat-icon> Home
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/charts" routerLinkActive="active" style="font-size: 20px;">
-          <mat-icon style="font-size: 30px;">insert_chart</mat-icon> Charts
-        </a>
-      </li>
-      <!-- Add more menu items as needed -->
-
-      <!-- Example dropdown menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
-          <mat-icon style="font-size: 30px;">more_vert</mat-icon> More
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#" style="font-size: 14px;">Link 1</a>
-          <a class="dropdown-item" href="#" style="font-size: 14px;">Link 2</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" style="font-size: 14px;">Separated link</a>
-        </div>
-      </li>
-    </ul>
-
-    <!-- GitHub icon and link -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/rodAlm08/Executive_Dashboard.git" target="_blank" style="font-size: 20px;">
-          <span class="octicon octicon-mark-github" style="vertical-align: middle;"></span> GitHub
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
+</mat-toolbar>

@@ -1,19 +1,16 @@
-import { Component, inject, TemplateRef, ViewEncapsulation } from '@angular/core';
-
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css'],
-	encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  menuOpen = false;
+  @Output() toggleSidebar = new EventEmitter<void>();
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+  constructor() {}
+  
+  onToggleSidebar() {
+    this.toggleSidebar.emit();
   }
-
-
-	
 }

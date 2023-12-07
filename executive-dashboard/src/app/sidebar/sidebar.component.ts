@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  @Output() toggle = new EventEmitter<void>();
+
+  onItemClick() {
+    // Emit event to close sidebar when a menu item is clicked
+    this.toggle.emit();
+  }
 
 }

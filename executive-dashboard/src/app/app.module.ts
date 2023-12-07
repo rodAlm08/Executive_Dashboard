@@ -36,10 +36,10 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, // Add FormsModule here
-    HttpClientModule, BrowserAnimationsModule, // Add HttpClientModule here
+    FormsModule, 
+    HttpClientModule, BrowserAnimationsModule, 
     MatFormFieldModule,
-    MatTableModule, // Add this
+    MatTableModule,
     MatInputModule,
     MatIconModule,
     MatSelectModule,

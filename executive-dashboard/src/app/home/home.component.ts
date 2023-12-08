@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+
+import { DataService } from 'src/Services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -9,26 +8,26 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['Tables_in_information_schema'];
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  data: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService) { }
 
-  ngOnInit() {
-    this.loadDataFromServer();
+  ngOnInit(): void {
+    this.loadData();
   }
 
-  loadDataFromServer() {
-    this.http.get<any[]>('http://localhost:3000/api/data').subscribe(
-      (data: any[] | undefined) => {
-        this.dataSource = new MatTableDataSource(data);
-        this.dataSource.paginator = this.paginator; // If you have pagination
-        console.log('Data loaded from server:', data);
+  loadData(): void {
+    this.dataService.getData().subscribe(
+      (result) => {
+        this.data = result;
+        console.log(this.data);
       },
-      (error: any) => {
-        console.error('Error loading data from server:', error);
+      (error) => {
+        console.error('Error loading data:', error);
       }
     );
   }
+
+  
+  
 }

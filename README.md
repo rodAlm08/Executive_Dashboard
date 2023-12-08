@@ -88,3 +88,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Thanks to the contributors and open-source community for their valuable contributions.
 - Chart.js libraries for enabling powerful and flexible data visualization.
 
+added:
+
+npm install cors
+server created with express.js

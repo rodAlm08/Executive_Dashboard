@@ -9,19 +9,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { AppRoutingModule } from './app-routing.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSortModule } from "@angular/material/sort";
 
 
 @NgModule({
@@ -47,8 +47,10 @@ import { FooterComponent } from './footer/footer.component';
     SidebarModule,
     MatSidenavModule,
     MatListModule,
-    MatInputModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [],

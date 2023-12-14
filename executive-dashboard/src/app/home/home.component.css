@@ -45,7 +45,19 @@ body, h1, p {
   /* Data table styling with horizontal and vertical dividers */
   .styled-table {
     width: 100%;
+    border-collapse: collapse; /* Remove spacing between table cells */
+  
+    th, td {
+      border: 1px solid #ccc; /* Add a 1px solid border with a gray color */
+      padding: 8px; /* Add padding for spacing inside cells */
+      text-align: left; /* Align text to the left within cells */
+    }
+  
+    th {
+      background-color: #f2f2f2; /* Add background color to header cells */
+    }
   }
+  
   
   .styled-table .mat-row, .styled-table .mat-header-row {
     display: flex;

@@ -16,6 +16,8 @@ interface DataRow {
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   data: any;
   dataSource = new MatTableDataSource<any>([]);
   allColumns: string[] = [
@@ -39,21 +41,9 @@ export class HomeComponent implements OnInit {
   constructor(private dataService: DataService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    // this.loadData();
     this.loadTestData();
+    this.dataSource.paginator = this.paginator;
   }
-
-  // loadData(): void {
-  //   this.dataService.getData().subscribe(
-  //     (result) => {
-  //       this.data = result;
-  //       console.log(this.data);
-  //     },
-  //     (error) => {
-  //       console.error('Error loading data:', error);
-  //     }
-  //   );
-  // }
 
   loadTestData(): void {
    
@@ -61,6 +51,7 @@ export class HomeComponent implements OnInit {
       (data) => {
         console.log('Data loaded:', data);
         this.dataSource = new MatTableDataSource(data);
+        this.dataSource.paginator = this.paginator;
       },
       (error) => {
         console.error('Error loading data:', error);
@@ -68,11 +59,19 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  applyFilter(filterValue: string) {
-    if (this.dataSource) {
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
+  syncData(): void {
+    this.dataService.syncData().subscribe(
+      (newData) => {
+        console.log('Data synced successfully', newData);
+        this.dataSource = new MatTableDataSource(newData);        
+        this.dataSource.paginator = this.paginator;
+      },
+      (error) => {
+        console.error('Error syncing data', error);
+      }
+    );
   }
+  
 
   sendDataToController() {
     const dataToSubmit = this.prepareDataForSubmission();
@@ -106,4 +105,6 @@ export class HomeComponent implements OnInit {
 
     return selectedData;
   }
+
+ 
 }

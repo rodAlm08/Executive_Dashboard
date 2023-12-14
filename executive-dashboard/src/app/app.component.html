@@ -1,5 +1,3 @@
-<!-- app.component.html -->
-
 <mat-toolbar class="mat-elevation-z8">
     <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
       <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
@@ -26,7 +24,8 @@
         <mat-icon>insert_chart</mat-icon>
         <span>Chart</span>
       </button>
-     
+      
+
       <mat-divider></mat-divider>
   
       <button mat-button class="menu-button" routerLink="/help">
@@ -41,4 +40,6 @@
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  <app-footer></app-footer>
   

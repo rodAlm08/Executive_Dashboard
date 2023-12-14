@@ -1,80 +1,82 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset styles to match Angular Material */
+body, h1, p {
     margin: 0;
     padding: 0;
+  }
+  
+  /* Angular Material theme typography */
+  body {
+    font-family: 'Roboto', 'Arial', sans-serif;
     background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 1000px;
+  }
+  
+  /* Container styles */
+  .page-container {
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-section {
-    background-image: url('../../assets/banner.jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0;
-}
-
-.hero-section h1 {
-    font-size: 48px;
+    padding: 20px;
+  }
+  
+  /* Angular Material Card adjustments */
+  mat-card {
     margin-bottom: 20px;
-}
+  }
+  
+  mat-card-content {
+    padding: 20px;
+  }
+  
 
-.cta-button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #45a049;
-}
-
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: left;
-    padding: 15px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.footer img {
-    max-width: 250px;
-    margin-right: 20px;
-}
-
-.footer p {
-    margin: 0;
-}
-
-.social-links {
-    list-style: none;
-    padding: 0;
-}
-
-.social-links li {
-    display: inline;
+  mat-form-field {
+    flex-grow: 1;
+    min-width: 250px;
+  }
+  
+  /* Angular Material Button styles */
+  button.mat-raised-button {
     margin-right: 10px;
-}
-
-.social-links li:last-child {
-    margin-right: 0;
-}
-
-.social-links li a {
-    color: #fff;
-    text-decoration: none;
-}
+  }
+  
+  /* Angular Material Paginator styles */
+  .mat-paginator {
+    margin-top: 10px;
+  }
+  
+  /* Data table styling with horizontal and vertical dividers */
+  .styled-table {
+    width: 100%;
+  }
+  
+  .styled-table .mat-row, .styled-table .mat-header-row {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .styled-table .mat-cell, .styled-table .mat-header-cell {
+    flex: 1;
+    border-right: 1px solid #e0e0e0;
+    min-width: 120px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .styled-table .mat-cell:last-child, .styled-table .mat-header-cell:last-child {
+    border-right: none;
+  }
+  
+  /* Scrollable container for table */
+  .table-scroll {
+    overflow-x: auto;
+  }
+  
+  /* Styles for selected variables chips */
+  .variables-grid mat-chip {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .selected-variables-title {
+    margin-bottom: 10px;
+  }
+  

@@ -6,24 +6,25 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = 'https://zerofourtwo.net/api/dataset';
+  private baseUrl = 'https://zerofourtwo.net/api/';
 
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<any> {
+  getTestData(): Observable<any> {
     // Make a GET request
-    return this.http.get<any>(this.baseUrl);
+    return this.http.get<any>(this.baseUrl+ "dataset");
   }
 
-  getTestData(): Observable<any> {
-    return this.http.get<any>('/assets/test_data.json'); 
-  }
+ 
 
   sendData(data: any) {
-    
-    const apiEndpoint = 'https://zerofourtwo.net/api/ai';
-    return this.http.post(apiEndpoint, data);
+    return this.http.post(this.baseUrl+ "ai", data);
   }
 
+  syncData(): Observable<any> {
+    
+    return this.http.get<any>(this.baseUrl+ "dataset");
+  }
+  
   
 }

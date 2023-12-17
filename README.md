@@ -1,6 +1,10 @@
+<div style="text-align: center;">
+    <img src="./images/ATU_Logo-removebg-preview.png" width="60%" alt="ATU Logo">
+</div>
+
 # Executive Dashboard Project
 
-Executive Dashboard is a web application that provides data visualization tools for businesses and professionals. It allows users to create interactive charts and graphs to analyze and present their data effectively.
+Executive Dashboard is a web application that provides data visualization. It allows users to filter, tune and if needd bias the data being sent to the A.I modules for analysis.
 
 ## Features
 
@@ -24,6 +28,7 @@ Before you begin, ensure you have the following installed:
 - [Angular CLI](https://cli.angular.io/): Command line interface for Angular.
 - [Chart.js](https://www.chartjs.org/): Simple yet flexible JavaScript charting library for designers & developers.
 - [D3.js](https://d3js.org/): JavaScript library for producing dynamic, interactive data visualizations in web browsers.
+- [cors](https://www.npmjs.com/package/cors): CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 
 ## Getting Started
 
@@ -41,29 +46,28 @@ To run the Executive Dashboard locally, follow these steps:
 
 `npm install -g @angular/cli`
 
-
 4. **Install Chart.js:**
 
 `npm install chart.js --save`
-
 
 6. **Install Application Dependencies:**
 
 `npm install`
 
-
 7. **Run the Application:**
 
 `ng serve`
-
 
 8. **Access the Application:**
 Open your web browser and go to `http://localhost:4200` to access the Executive Dashboard.
 
 ## Usage
 
-1. **Select Chart Type:**
-Choose the type of chart you want to create from the dropdown menu (line chart, bar chart, scatter plot, or pie chart).
+1. **Select Variables:**
+From the dropdown choose the variables that should be sent to the AI modules for analysis.
+
+2. **Send selected vaiables for analysis:**
+After selecting all applicable variables, click the button to send the selected data to the AI module.
 
 2. **Customize Chart:**
 Customize the chart appearance, labels, and other settings using the available options.
@@ -79,16 +83,4 @@ Contributions are welcome! If you find any issues or want to enhance the applica
 5. Push your changes to the branch.
 6. Create a pull request explaining your changes.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- Thanks to the contributors and open-source community for their valuable contributions.
-- Chart.js libraries for enabling powerful and flexible data visualization.
-
-added:
-
-npm install cors
-server created with express.js
